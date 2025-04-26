@@ -2,7 +2,9 @@ import java.util.List;
 
 public class Task1and3 {
     public static void main(String[] args) {
-        List<String> stringList = List.of("mo", "jo", "li", "flo", "mo", "li");
+
+        List<String> stringList = List.of("mo", "jo", "li", "flo","mo","li");
+
         System.out.println("проверка boolean есть ли в данном листе повторяющиеся объект: ");
         System.out.println(ListUtil.hasDuplicateObjects(stringList));
 

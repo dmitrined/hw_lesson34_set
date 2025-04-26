@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class Task2 {
@@ -28,6 +29,11 @@ public class Task2 {
         System.out.println("\n--Общий список Person, но без повторов--");
         List<Person> unrepeatedTeamList = ListUtil.removeDuplicateObjects(allTeamList);
         ListUtil.print(unrepeatedTeamList);
+
+        System.out.println("\n--Список Person,без повторов сортированный byLName --");
+        List<Person> sortedListByLname = ListUtil.sort(unrepeatedTeamList, Person.byLName());
+        ListUtil.print(sortedListByLname);
+
     }
 
 }

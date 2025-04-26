@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class ListUtil {
     private ListUtil() {
@@ -21,6 +18,11 @@ public class ListUtil {
         for (T element : list) {
             System.out.println(element);
         }
+    }
+    public static <T> List<T> sort(List<T> list, Comparator<T> comparator){
+        List<T> result = new ArrayList<>(list);
+        Collections.sort(result,comparator);
+        return result;
     }
 
     public static <T> List<T> addAllListsToOne(List<List<T>> listOfLists) {

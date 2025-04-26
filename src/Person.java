@@ -1,8 +1,9 @@
+import java.util.Comparator;
 import java.util.Objects;
 
 // Класс Person создан для Task2
 public class Person {
-    private String fName;
+    private  String fName;
     private String lName;
     private String birthDate;
 
@@ -43,6 +44,10 @@ public class Person {
                 ", birthDate='" + birthDate + '\'' +
                 '}';
     }
+    public static Comparator<Person> byLName(){
+        return  (Person o1, Person o2) -> { return o1.lName.compareTo(o2.lName); };
+    }
+
 }
 
 
