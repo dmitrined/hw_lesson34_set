@@ -1,4 +1,6 @@
 import java.util.*;
+import java.util.function.Predicate;
+import java.util.logging.Filter;
 
 public class ListUtil {
     private ListUtil() {
@@ -19,9 +21,11 @@ public class ListUtil {
             System.out.println(element);
         }
     }
-    public static <T> List<T> sort(List<T> list, Comparator<T> comparator){
+
+    //дополнительно, чтобы вспомнить
+    public static <T> List<T> sort(List<T> list, Comparator<T> comparator) {
         List<T> result = new ArrayList<>(list);
-        Collections.sort(result,comparator);
+        Collections.sort(result, comparator);
         return result;
     }
 
@@ -32,6 +36,7 @@ public class ListUtil {
         }
         return result;
     }
+
     /*
 
  Сначала я создал такой метод-результат не универсальный : пришлось погуглить
@@ -47,10 +52,17 @@ public class ListUtil {
         for (T element3 : list3) {
             result.add(element3);
         }
-        return result;
-    }
+        return result;T
 
      */
+    public static List<Person> filter(List<Person> list, Predicate<Person> filter) {
+        List<Person> result = new ArrayList<>();
+        for (Person element : list) {
+            if (filter.test(element)) {
+                result.add(element);
+            }
+        }
+        return result;
 
-
+    }
 }

@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Task2 {
     public static void main(String[] args) {
@@ -30,9 +31,16 @@ public class Task2 {
         List<Person> unrepeatedTeamList = ListUtil.removeDuplicateObjects(allTeamList);
         ListUtil.print(unrepeatedTeamList);
 
+        //дополнительно, чтобы вспомнить
         System.out.println("\n--Список Person,без повторов сортированный byLName --");
         List<Person> sortedListByLname = ListUtil.sort(unrepeatedTeamList, Person.byLName());
         ListUtil.print(sortedListByLname);
+        System.out.println("--Фильтр--");
+        List<Person> lNameStartWithOfT = ListUtil.filter(unrepeatedTeamList, s -> s.getlName().startsWith("Т"));
+        ListUtil.print(lNameStartWithOfT);
+
+
+
 
     }
 
