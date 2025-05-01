@@ -55,9 +55,9 @@ public class ListUtil {
         return result;T
 
      */
-    public static List<Person> filter(List<Person> list, Predicate<Person> filter) {
-        List<Person> result = new ArrayList<>();
-        for (Person element : list) {
+    public static <T> List<T> filter(List<T> list, Predicate<T> filter) {
+        List<T> result = new ArrayList<>();
+        for (T element : list) {
             if (filter.test(element)) {
                 result.add(element);
             }
